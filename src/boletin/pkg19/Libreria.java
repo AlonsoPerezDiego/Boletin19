@@ -7,6 +7,7 @@ package boletin.pkg19;
 
 import static IntroducirDatos.Datos.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -48,16 +49,15 @@ public class Libreria {
     }
     
     public void buscar(String titulo){
-        
-        for(int i = 0; i<lib.size(); i++){
+        int i;
+        for(i = 0; i<lib.size(); i++){
             if(lib.get(i).getTitulo() .equals(titulo)){
                 System.out.println("Está ese libro.\n" + lib.get(i).toString());
             }
-            else{
-                System.out.println("No está ese libro.");
-            }
         }
-        
+        if(i==lib.size()){
+            System.out.println("No está ese libro.");
+        }
     }
     
     public void retirar(String titulo){
@@ -72,4 +72,7 @@ public class Libreria {
         }
     }
     
+    public void ordenar(){
+        Collections.sort(lib);
+    }
 }

@@ -11,13 +11,13 @@ import java.util.Objects;
  *
  * @author Diego
  */
-public class Libros {
+public class Libros implements Comparable <Libros>{
     
     private String titulo, autor, isbn;
     private float precio;
     private int unidades;
 
-    public Libros() {
+    public Libros(){
     }
 
     public Libros(String titulo, String autor, String isbn, float precio, int unidades) {
@@ -113,6 +113,9 @@ public class Libros {
         }
         return true;
     }
-    
+    @Override
+    public int compareTo(Libros comparar){
+        return this.titulo.compareToIgnoreCase(comparar.getTitulo());
+    }
     
 }

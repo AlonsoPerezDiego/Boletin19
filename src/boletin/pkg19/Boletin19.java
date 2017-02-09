@@ -31,7 +31,8 @@ public class Boletin19 {
                 case 1: gestion.añadir();
                         break;
                        
-                case 2: gestion.mostrarTodos();
+                case 2: gestion.ordenar();
+                        gestion.mostrarTodos();
                         break;
                 
                 case 3: gestion.vender(pedirString("Introduce título del libro que quieras vender:"));
